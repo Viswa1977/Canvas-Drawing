@@ -1,0 +1,12 @@
+com/cs/drawing/model/EntityFactoryTest.class
+com/cs/drawing/model/CanvasFillTest.class
+com/cs/drawing/model/LineTest.class
+com/cs/drawing/command/DrawLineCommandTest.class
+com/cs/drawing/command/CommandFactoryTest.class
+com/cs/drawing/model/PointTest.class
+com/cs/drawing/command/CanvasFillCommandTest.class
+com/cs/drawing/commons/UtilsTest.class
+com/cs/drawing/model/RectangleTest.class
+com/cs/drawing/command/DrawRectangleCommandTest.class
+com/cs/drawing/command/CreateCanvasCommandTest.class
+com/cs/drawing/model/CanvasTest.class
