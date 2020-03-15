@@ -22,13 +22,13 @@ public class CanvasTest {
 	
 	// empty canvas
 	@Test
-	public void create() throws Exception {
+	public void create() throws Exception {		
 		Assert.assertEquals(canvas.render(),
 				"----------------------\n" + 
-				"|                     |\n" + 
-				"|                     |\n" + 
-				"|                     |\n" + 
-				"|                     |\n" + 
+				"|                    |\n" + 
+				"|                    |\n" + 
+				"|                    |\n" + 
+				"|                    |\n" + 
 				"----------------------");
 	}
 
@@ -38,11 +38,11 @@ public class CanvasTest {
 		Line line = new Line(1, 2, 1, 3);
 		canvas.addAction(line);
 		Assert.assertEquals(canvas.render(),
-				"----------------------\n"  + 
-				"|  				    |\n" + 
-				"|x  				    |\n" + 
-				"|x  				    |\n" + 
-				"|  				    |\n" + 
+				"----------------------\n" + 
+				"|                    |\n" + 
+				"|x                   |\n" + 
+				"|x                   |\n" + 
+				"|                    |\n" + 
 				"----------------------");
 	}
 
@@ -51,13 +51,12 @@ public class CanvasTest {
 	public void addEntity2() throws Exception {
 		Line line = new Line(1, 2, 1, 22);
 		canvas.addAction(line);
-
 		Assert.assertEquals(canvas.render(),
 				"----------------------\n" + 
-				"|  				  |\n" + 
-				"|x  				  |\n" + 
-				"|x  				  |\n" + 
-				"|x  				  |\n" + 
+				"|                    |\n" + 
+				"|x                   |\n" + 
+				"|x                   |\n" + 
+				"|x                   |\n" + 
 				"----------------------");
 	}
 
@@ -68,7 +67,12 @@ public class CanvasTest {
 		canvas.addAction(line);
 
 		Assert.assertEquals(canvas.render(),
-				"----------------------\n" + "|  |\n" + "| xxx  |\n" + "|  |\n" + "|  |\n" + "----------------------");
+				"----------------------\n" + 
+				"|                    |\n" + 
+				"| xxx                |\n" + 
+				"|                    |\n" + 
+				"|                    |\n" + 
+				"----------------------");		
 	}
 
 	// add horizontal line that is trimmed
@@ -76,9 +80,13 @@ public class CanvasTest {
 	public void addEntity4() throws Exception {
 		Line line = new Line(1, 2, 30, 2);
 		canvas.addAction(line);
-
-		Assert.assertEquals(canvas.render(), "----------------------\n" + "|  |\n" + "|xxxxxxxxxxxxxxxxxxxx|\n"
-				+ "|  |\n" + "|  |\n" + "----------------------");
+		Assert.assertEquals(canvas.render(), 
+				"----------------------\n" + 
+				"|                    |\n" + 
+				"|xxxxxxxxxxxxxxxxxxxx|\n" + 
+				"|                    |\n" + 
+				"|                    |\n" + 
+				"----------------------");			
 	}
 
 	// line outside of canvas
@@ -103,8 +111,13 @@ public class CanvasTest {
 		Rectangle rectangle = new Rectangle(14, 1, 18, 3);
 		canvas.addAction(rectangle);
 
-		Assert.assertEquals(canvas.render(), "----------------------\n" + "| xxxxx |\n" + "| x  x |\n" + "| xxxxx |\n"
-				+ "|  |\n" + "----------------------");
+		Assert.assertEquals(canvas.render(), 				
+				"----------------------\n" + 
+				"|             xxxxx  |\n" + 
+				"|             x   x  |\n" + 
+				"|             xxxxx  |\n" + 
+				"|                    |\n" + 
+				"----------------------");	
 	}
 
 	// add rectangle that exceed the canvas height
@@ -113,8 +126,13 @@ public class CanvasTest {
 		Rectangle rectangle = new Rectangle(2, 1, 4, 30);
 		canvas.addAction(rectangle);
 
-		Assert.assertEquals(canvas.render(), "----------------------\n" + "| xxx  |\n" + "| x x  |\n" + "| x x  |\n"
-				+ "| x x  |\n" + "----------------------");
+		Assert.assertEquals(canvas.render(),
+				"----------------------\n" + 
+				"| xxx                |\n" + 
+				"| x x                |\n" + 
+				"| x x                |\n" + 
+				"| x x                |\n" + 
+				"----------------------");	
 	}
 
 	// add rectangle that exceed the canvas width
@@ -123,8 +141,13 @@ public class CanvasTest {
 		Rectangle rectangle = new Rectangle(2, 1, 40, 3);
 		canvas.addAction(rectangle);
 
-		Assert.assertEquals(canvas.render(), "----------------------\n" + "| xxxxxxxxxxxxxxxxxxx|\n" + "| x |\n"
-				+ "| xxxxxxxxxxxxxxxxxxx|\n" + "|  |\n" + "----------------------");
+		Assert.assertEquals(canvas.render(), 
+				"----------------------\n" + 
+				"| xxxxxxxxxxxxxxxxxxx|\n" + 
+				"| x                  |\n" + 
+				"| xxxxxxxxxxxxxxxxxxx|\n" + 
+				"|                    |\n" + 
+				"----------------------");				
 	}
 
 	// add rectangle that exceed both the canvas width and height
@@ -133,8 +156,13 @@ public class CanvasTest {
 		Rectangle rectangle = new Rectangle(2, 1, 40, 30);
 		canvas.addAction(rectangle);
 
-		Assert.assertEquals(canvas.render(), "----------------------\n" + "| xxxxxxxxxxxxxxxxxxx|\n" + "| x |\n"
-				+ "| x |\n" + "| x |\n" + "----------------------");
+		Assert.assertEquals(canvas.render(), 
+				"----------------------\n" + 
+				"| xxxxxxxxxxxxxxxxxxx|\n" + 
+				"| x                  |\n" + 
+				"| x                  |\n" + 
+				"| x                  |\n" + 
+				"----------------------");			
 	}
 
 	// add rectangle that is outside
@@ -152,8 +180,12 @@ public class CanvasTest {
 		canvas.addAction(rectangle);
 
 		Assert.assertEquals(canvas.render(),
-				"----------------------\n" + "|oooooooooooooooooooo|\n" + "|oooooooooooooooooooo|\n"
-						+ "|oooooooooooooooooooo|\n" + "|oooooooooooooooooooo|\n" + "----------------------");
+				"----------------------\n" + 
+				"|oooooooooooooooooooo|\n" + 
+				"|oooooooooooooooooooo|\n" + 
+				"|oooooooooooooooooooo|\n" + 
+				"|oooooooooooooooooooo|\n" + 
+				"----------------------");	
 	}
 
 	// fill a vertical line
@@ -162,10 +194,14 @@ public class CanvasTest {
 		Line line = new Line(1, 2, 1, 3);
 		canvas.addAction(line);
 		ColorFill canvasFill = new ColorFill(1, 2, 'o');
-		canvas.addAction(canvasFill);
-
+		canvas.addAction(canvasFill);		
 		Assert.assertEquals(canvas.render(),
-				"----------------------\n" + "|  |\n" + "|x  |\n" + "|x  |\n" + "|  |\n" + "----------------------");
+				"----------------------\n" + 
+				"|                    |\n" + 
+				"|x                   |\n" + 
+				"|x                   |\n" + 
+				"|                    |\n" + 
+				"----------------------");		
 
 	}
 
@@ -176,10 +212,13 @@ public class CanvasTest {
 		canvas.addAction(rectangle);
 		ColorFill canvasFill = new ColorFill(14, 1, 'o');
 		canvas.addAction(canvasFill);
-
-		Assert.assertEquals(canvas.render(), "----------------------\n" + "| xxxxx |\n" + "| x  x |\n" + "| xxxxx |\n"
-				+ "|  |\n" + "----------------------");
-
+		Assert.assertEquals(canvas.render(), 
+				"----------------------\n" + 
+				"|             xxxxx  |\n" + 
+				"|             x   x  |\n" + 
+				"|             xxxxx  |\n" + 
+				"|                    |\n" + 
+				"----------------------");	
 	}
 
 	// fill a rectangle content
@@ -189,9 +228,14 @@ public class CanvasTest {
 		canvas.addAction(rectangle);
 		ColorFill canvasFill = new ColorFill(15, 2, 'o');
 		canvas.addAction(canvasFill);
-
-		Assert.assertEquals(canvas.render(), "----------------------\n" + "| xxxxx |\n" + "| xooox |\n" + "| xooox |\n"
-				+ "| xxxxx |\n" + "----------------------");
+		
+		Assert.assertEquals(canvas.render(), 
+				"----------------------\n" + 
+				"|             xxxxx  |\n" + 
+				"|             xooox  |\n" + 
+				"|             xooox  |\n" + 
+				"|             xxxxx  |\n" + 
+				"----------------------");	
 
 	}
 
@@ -202,10 +246,13 @@ public class CanvasTest {
 		canvas.addAction(rectangle);
 		ColorFill canvasFill = new ColorFill(10, 1, 'o');
 		canvas.addAction(canvasFill);
-
 		Assert.assertEquals(canvas.render(),
-				"----------------------\n" + "|oooooooooooooxxxxx |\n" + "|ooooooooooooox  x |\n"
-						+ "|ooooooooooooox  x |\n" + "|oooooooooooooxxxxx |\n" + "----------------------");
+				"----------------------\n" + 
+				"|oooooooooooooxxxxx  |\n" + 
+				"|ooooooooooooox   x  |\n" + 
+				"|ooooooooooooox   x  |\n" + 
+				"|oooooooooooooxxxxx  |\n" + 
+				"----------------------");					
 	}
 
 	// Add multiple model to canvas
@@ -216,18 +263,31 @@ public class CanvasTest {
 
 		Line line2 = new Line(6, 3, 6, 4);
 		canvas.addAction(line2);
-
-		Assert.assertEquals(canvas.render(), "----------------------\n" + "|  |\n" + "|xxxxxx |\n" + "| x |\n"
-				+ "| x |\n" + "----------------------");
+		Assert.assertEquals(canvas.render(), 
+				"----------------------\n" + 
+				"|                    |\n" + 
+				"|xxxxxx              |\n" + 
+				"|     x              |\n" + 
+				"|     x              |\n" + 
+				"----------------------");	
 
 		canvas.addAction(new Rectangle(14, 1, 18, 3));
-		Assert.assertEquals(canvas.render(), "----------------------\n" + "| xxxxx |\n" + "|xxxxxx  x  x |\n"
-				+ "| x  xxxxx |\n" + "| x |\n" + "----------------------");
+		Assert.assertEquals(canvas.render(), 
+				"----------------------\n" + 
+				"|             xxxxx  |\n" + 
+				"|xxxxxx       x   x  |\n" + 
+				"|     x       xxxxx  |\n" + 
+				"|     x              |\n" + 
+				"----------------------");
 
 		canvas.addAction(new ColorFill(10, 3, 'o'));
 		Assert.assertEquals(canvas.render(),
-				"----------------------\n" + "|oooooooooooooxxxxxoo|\n" + "|xxxxxxooooooox  xoo|\n"
-						+ "| xoooooooxxxxxoo|\n" + "| xoooooooooooooo|\n" + "----------------------");
+				"----------------------\n" + 
+				"|oooooooooooooxxxxxoo|\n" + 
+				"|xxxxxxooooooox   xoo|\n" + 
+				"|     xoooooooxxxxxoo|\n" + 
+				"|     xoooooooooooooo|\n" + 
+				"----------------------");
 	}
 
 }
