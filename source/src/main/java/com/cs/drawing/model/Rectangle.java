@@ -3,96 +3,52 @@ package com.cs.drawing.model;
 import com.cs.drawing.commons.Utils;
 import com.cs.drawing.exception.InvalidCommandException;
 
-public class Rectangle implements CanvasAction{
-	private int x1;
-	private int y1;
-	private int x2;
-	private int y2;
-
+public class Rectangle implements CanvasAction {
 	Point point1;
 	Point point2;
+
 	public Rectangle(int _x1, int _y1, int _x2, int _y2) {
 		Utils.validateCoordinates(_x1, _y1, _x2, _y2);
-		if ((_x1 == _x2)|| (_y1 == _y2) ||(_y1 > _y2) || (_x1 > _x2)) {
-		//    this.x1 = _x2;
-		//    this.y1 = _y2;
-		//    this.x2 = _x1;
-		//    this.y2 = _y1;
-		throw new InvalidCommandException();
+		if ((_x1 == _x2) || (_y1 == _y2) || (_y1 > _y2) || (_x1 > _x2)) {
+			throw new InvalidCommandException();
 		} else {
-		this.point1 = new Point(_x1,_y1);
-		this.point2 = new Point(_x2,_y2);
-		//    this.x1 = _x1;
-		//    this.y1 = _y1;
-		//    this.x2 = _x2;
-		//    this.y2 = _y2;
+			this.point1 = new Point(_x1, _y1);
+			this.point2 = new Point(_x2, _y2);
 		}
 	}
 
-	public int getX1() {
-		return x1;
-	}
-
-	public Rectangle setX1(int x1) {
-		this.x1 = x1;
-		return this;
-	}
-
-	public int getY1() {
-		return y1;
-	}
-
-	public Rectangle setY1(int y1) {
-		this.y1 = y1;
-		return this;
-	}
-
-	public int getX2() {
-	return x2;
-	}
-
-	public Rectangle setX2(int x2) {
-	this.x2 = x2;
-	return this;
-	}
-
-	public int getY2() {
-	return y2;
-	}
-
-	public Rectangle setY2(int y2) {
-	this.y2 = y2;
-	return this;
-	}
-
 	public Point getPoint1() {
-	return point1;
+		return point1;
 	}
 
 	public Point getPoint2() {
-	return point2;
+		return point2;
 	}
-
 
 	@Override
 	public boolean equals(Object o) {
-	if (this == o) return true;
-	if (o == null || getClass() != o.getClass()) return false;
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
 
-	Rectangle rectangle = (Rectangle) o;
+		Rectangle rectangle = (Rectangle) o;
 
-	if (x1 != rectangle.x1) return false;
-	if (y1 != rectangle.y1) return false;
-	if (x2 != rectangle.x2) return false;
-		return y2 == rectangle.y2;
+		if (this.point1.getX() != rectangle.getPoint1().getX())
+			return false;
+		if (this.point1.getY() != rectangle.getPoint1().getY())
+			return false;
+		if (this.point2.getX() != rectangle.getPoint2().getX())
+			return false;
+		return this.point2.getY() == rectangle.getPoint2().getY();
 	}
 
 	@Override
 	public int hashCode() {
-		int result = x1;
-		result = 31 * result + y1;
-		result = 31 * result + x2;
-		result = 31 * result + y2;
+		int result = this.point1.getX();
+		result = 31 * result + this.point1.getY();
+		result = 31 * result + this.point2.getX();
+		result = 31 * result + this.point2.getY();
 		return result;
 	}
 

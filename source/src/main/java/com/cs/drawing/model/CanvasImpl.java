@@ -22,7 +22,7 @@ public class CanvasImpl implements Canvas {
 	public CanvasImpl(int w, int h) {
 		width = w;
 		height = h;
-		
+
 		canvasArray = new char[this.height][this.width];
 		Arrays.stream(canvasArray).forEach(chars -> Arrays.fill(chars, EMPTY_CHAR));
 
