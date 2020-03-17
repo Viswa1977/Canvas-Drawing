@@ -11,7 +11,19 @@ import com.cs.drawing.model.ColorFill;
 import com.cs.drawing.model.Line;
 import com.cs.drawing.model.Quit;
 import com.cs.drawing.model.Rectangle;
-
+/**
+ * 
+ * CanvasImpl renders canvas,Line,Rectangle and fills the Canvas
+ * 
+ * While rendering line if user input exceeds the Canvas width and height defaulted to the Canvas max width and height. 
+ * 
+ * Draw rectangle uses drawLine() method to render rectangle. If point values exceeds then render till the canvas boundaries. 
+ * 
+ * FillColor uses BFS to render the canvas. 
+ * 
+ * @author Viswa
+ *
+ */
 public class CanvasImpl implements Canvas {
 
 	private static final char HORIZONTAL_EDGE_CHAR = '-';
@@ -84,7 +96,7 @@ public class CanvasImpl implements Canvas {
 			throw new InvalidEntityException(ErrorMessages.LINE_FILL_POINT_OUTSIDE);
 		}
 
-		// trim the part the is outside
+		// Assign to max height or width
 		if (line.getPoint2().getX() >= width) {
 			line.getPoint2().setX(width);
 		}

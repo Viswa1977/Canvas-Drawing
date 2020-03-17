@@ -15,7 +15,12 @@ import com.cs.drawing.factory.CommandFactory;
 import com.cs.drawing.model.CanvasAction;
 import com.cs.drawing.service.Canvas;
 import com.cs.drawing.service.CanvasImpl;
-
+/**
+ * When user executes java -jar from /target/console-drawing-1.0-jar-with-dependencies.jar main method gets executed. 
+ * 
+ * @author dimple
+ *
+ */
 public class Main {
 	private static Canvas canvas;
 	private static Scanner scanner;
