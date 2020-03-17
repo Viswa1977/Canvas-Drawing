@@ -7,7 +7,7 @@ import org.junit.rules.ExpectedException;
 import static org.junit.Assert.assertEquals;
 
 public class UtilsTest {
-	
+
 	@Rule
 	public final ExpectedException expectedException = ExpectedException.none();
 

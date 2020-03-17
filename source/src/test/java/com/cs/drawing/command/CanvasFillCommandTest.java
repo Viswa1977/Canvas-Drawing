@@ -5,7 +5,7 @@ import org.junit.Test;
 import com.cs.drawing.exception.InvalidCommandParamsException;
 
 public class CanvasFillCommandTest {
-	
+
 	@Test
 	public void testCreate() throws Exception {
 		new CanvasFillCommand("1", "1", "o");
@@ -35,6 +35,5 @@ public class CanvasFillCommandTest {
 	public void testCreate6() throws Exception {
 		new CanvasFillCommand();
 	}
-
 
 }

@@ -10,7 +10,7 @@ import com.cs.drawing.exception.InvalidCommandParamsException;
 import com.cs.drawing.factory.CommandFactory;
 
 public class CommandFactoryTest {
-	
+
 	private CommandFactory commandFactory;
 
 	@Before

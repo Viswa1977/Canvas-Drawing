@@ -19,19 +19,19 @@ public class CommandFactory {
 		String mainCommand = split[0].toUpperCase();
 		String[] params = Arrays.copyOfRange(split, 1, split.length);
 		switch (mainCommand) {
-			case QUIT:
-				return new QuitCommand();
-			case CREATE:
-				return new CreateCommand(params);
-			case LINE:
-				return new DrawLineCommand(params);
-			case RECTANGLE:
-				return new DrawRectangleCommand(params);
-			case BUCKET_FILL:
-				return new CanvasFillCommand(params);
-			default:
-				throw new InvalidCommandException();
-			}
+		case QUIT:
+			return new QuitCommand();
+		case CREATE:
+			return new CreateCommand(params);
+		case LINE:
+			return new DrawLineCommand(params);
+		case RECTANGLE:
+			return new DrawRectangleCommand(params);
+		case BUCKET_FILL:
+			return new CanvasFillCommand(params);
+		default:
+			throw new InvalidCommandException();
 		}
+	}
 
 }

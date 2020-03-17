@@ -5,7 +5,7 @@ import org.junit.Test;
 import com.cs.drawing.exception.InvalidCommandParamsException;
 
 public class DrawLineCommandTest {
-	
+
 	@Test
 	public void testCreate() throws Exception {
 		new DrawLineCommand("1", "1", "1", "2");
