@@ -1,4 +1,4 @@
-package com.cs.drawing.model;
+package com.cs.drawing.service;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -7,6 +7,11 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.cs.drawing.exception.InvalidEntityException;
+import com.cs.drawing.model.ColorFill;
+import com.cs.drawing.model.Line;
+import com.cs.drawing.model.Rectangle;
+import com.cs.drawing.service.Canvas;
+import com.cs.drawing.service.CanvasImpl;
 
 public class CanvasTest {
 

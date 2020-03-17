@@ -1,4 +1,4 @@
-package com.cs.drawing.model;
+package com.cs.drawing.service;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -6,6 +6,11 @@ import java.util.stream.Stream;
 
 import com.cs.drawing.commons.ErrorMessages;
 import com.cs.drawing.exception.InvalidEntityException;
+import com.cs.drawing.model.CanvasAction;
+import com.cs.drawing.model.ColorFill;
+import com.cs.drawing.model.Line;
+import com.cs.drawing.model.Quit;
+import com.cs.drawing.model.Rectangle;
 
 public class CanvasImpl implements Canvas {
 

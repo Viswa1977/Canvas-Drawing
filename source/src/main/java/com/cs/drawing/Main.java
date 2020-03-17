@@ -12,9 +12,9 @@ import com.cs.drawing.exception.InvalidCommandParamsException;
 import com.cs.drawing.exception.InvalidEntityException;
 import com.cs.drawing.factory.ActionFactory;
 import com.cs.drawing.factory.CommandFactory;
-import com.cs.drawing.model.Canvas;
 import com.cs.drawing.model.CanvasAction;
-import com.cs.drawing.model.CanvasImpl;
+import com.cs.drawing.service.Canvas;
+import com.cs.drawing.service.CanvasImpl;
 
 public class Main {
 	private static Canvas canvas;

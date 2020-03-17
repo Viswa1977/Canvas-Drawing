@@ -2,6 +2,7 @@ package com.cs.drawing.model;
 
 import com.cs.drawing.commons.ErrorMessages;
 import com.cs.drawing.commons.Utils;
+import com.cs.drawing.service.Canvas;
 
 public class Line implements CanvasAction {
 	private Point point1;

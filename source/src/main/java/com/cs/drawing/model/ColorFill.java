@@ -1,6 +1,7 @@
 package com.cs.drawing.model;
 
 import com.cs.drawing.commons.Utils;
+import com.cs.drawing.service.Canvas;
 
 public class ColorFill implements CanvasAction{
 	

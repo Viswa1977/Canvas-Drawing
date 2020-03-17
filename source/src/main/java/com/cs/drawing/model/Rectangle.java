@@ -2,6 +2,7 @@ package com.cs.drawing.model;
 
 import com.cs.drawing.commons.Utils;
 import com.cs.drawing.exception.InvalidCommandException;
+import com.cs.drawing.service.Canvas;
 
 public class Rectangle implements CanvasAction {
 	Point point1;
